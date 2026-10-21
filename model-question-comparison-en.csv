@@ -1,1 +1,101 @@
 case_id,model_id,trace_file,cell_id,nature,status,value_cents,reference_cents,explanation
+C01,openai/gpt-oss-120b,traces-td1.csv,groq:openai/gpt-oss-120b:C01,real,correct,792800,792800,The generated SQL returned the expected value.
+C01,openai/gpt-oss-20b,traces-td1.csv,groq:openai/gpt-oss-20b:C01,real,correct,792800,792800,The generated SQL returned the expected value.
+C01,cohere/north-mini-code:free,traces-td1.csv,openrouter:cohere/north-mini-code:free:C01,real,correct,792800,792800,The generated SQL returned the expected value.
+C01,qwen/qwen3.8-27b,traces-td1.csv,groq:qwen/qwen3.8-27b:C01,real,correct,792800,792800,The generated SQL returned the expected value.
+C01,dots-studio/dots-3-note-preview:free,traces-td1.csv,openrouter:dots-studio/dots-3-note-preview:free:C01,real,correct,792800,792800,The generated SQL returned the expected value.
+C02,openai/gpt-oss-120b,traces-td1.csv,groq:openai/gpt-oss-120b:C02,real,correct,590320,590320,The generated SQL returned the expected value.
+C02,openai/gpt-oss-20b,traces-td1.csv,groq:openai/gpt-oss-20b:C02,real,incorrect,0,590320,Incorrect birth-date interval: does not select the expected age group.
+C02,cohere/north-mini-code:free,traces-td1.csv,openrouter:cohere/north-mini-code:free:C02,real,sql_invalid,,590320,SQL syntax error: AS age is incorrectly used inside the WHERE clause.
+C02,qwen/qwen3.8-27b,traces-td1.csv,groq:qwen/qwen3.8-27b:C02,real,correct,590320,590320,The generated SQL returned the expected value.
+C02,dots-studio/dots-3-note-preview:free,traces-td1.csv,openrouter:dots-studio/dots-3-note-preview:free:C02,real,correct,590320,590320,The generated SQL returned the expected value.
+C03,openai/gpt-oss-120b,traces-td1.csv,groq:openai/gpt-oss-120b:C03,real,correct,936350,936350,The generated SQL returned the expected value.
+C03,openai/gpt-oss-20b,traces-td1.csv,groq:openai/gpt-oss-20b:C03,real,correct,936350,936350,The generated SQL returned the expected value.
+C03,cohere/north-mini-code:free,traces-td1.csv,openrouter:cohere/north-mini-code:free:C03,real,correct,936350,936350,The generated SQL returned the expected value.
+C03,qwen/qwen3.8-27b,traces-td1.csv,groq:qwen/qwen3.8-27b:C03,real,correct,936350,936350,The generated SQL returned the expected value.
+C03,dots-studio/dots-3-note-preview:free,traces-td1.csv,openrouter:dots-studio/dots-3-note-preview:free:C03,real,correct,936350,936350,The generated SQL returned the expected value.
+C04,openai/gpt-oss-120b,traces-td1.csv,groq:openai/gpt-oss-120b:C04,real,correct,2826250,2826250,The generated SQL returned the expected value.
+C04,openai/gpt-oss-20b,traces-td1.csv,groq:openai/gpt-oss-20b:C04,real,correct,2826250,2826250,The generated SQL returned the expected value.
+C04,cohere/north-mini-code:free,traces-td1.csv,openrouter:cohere/north-mini-code:free:C04,real,correct,2826250,2826250,The generated SQL returned the expected value.
+C04,qwen/qwen3.8-27b,traces-td1.csv,groq:qwen/qwen3.8-27b:C04,real,correct,2826250,2826250,The generated SQL returned the expected value.
+C04,dots-studio/dots-3-note-preview:free,traces-td1.csv,openrouter:dots-studio/dots-3-note-preview:free:C04,real,correct,2826250,2826250,The generated SQL returned the expected value.
+C05,openai/gpt-oss-120b,traces-td1.csv,groq:openai/gpt-oss-120b:C05,real,correct,38480,38480,The generated SQL returned the expected value.
+C05,openai/gpt-oss-20b,traces-td1.csv,groq:openai/gpt-oss-20b:C05,real,correct,38480,38480,The generated SQL returned the expected value.
+C05,cohere/north-mini-code:free,traces-td1.csv,openrouter:cohere/north-mini-code:free:C05,real,correct,38480,38480,The generated SQL returned the expected value.
+C05,qwen/qwen3.8-27b,traces-td1.csv,groq:qwen/qwen3.8-27b:C05,real,correct,38480,38480,The generated SQL returned the expected value.
+C05,dots-studio/dots-3-note-preview:free,traces-td1.csv,openrouter:dots-studio/dots-3-note-preview:free:C05,real,correct,38480,38480,The generated SQL returned the expected value.
+C06,openai/gpt-oss-120b,traces-td1.csv,groq:openai/gpt-oss-120b:C06,real,correct,0,0,The generated SQL returned the expected value.
+C06,openai/gpt-oss-20b,traces-td1.csv,groq:openai/gpt-oss-20b:C06,real,correct,0,0,The generated SQL returned the expected value.
+C06,cohere/north-mini-code:free,traces-td1.csv,openrouter:cohere/north-mini-code:free:C06,real,correct,0,0,The generated SQL returned the expected value.
+C06,qwen/qwen3.8-27b,traces-td1.csv,groq:qwen/qwen3.8-27b:C06,real,correct,0,0,The generated SQL returned the expected value.
+C06,dots-studio/dots-3-note-preview:free,traces-td1.csv,openrouter:dots-studio/dots-3-note-preview:free:C06,real,correct,0,0,The generated SQL returned the expected value.
+C07,openai/gpt-oss-120b,traces-td1.csv,groq:openai/gpt-oss-120b:C07,real,correct,13970,13970,The generated SQL returned the expected value.
+C07,openai/gpt-oss-20b,traces-td1.csv,groq:openai/gpt-oss-20b:C07,real,correct,13970,13970,The generated SQL returned the expected value.
+C07,cohere/north-mini-code:free,traces-td1.csv,openrouter:cohere/north-mini-code:free:C07,real,correct,13970,13970,The generated SQL returned the expected value.
+C07,qwen/qwen3.8-27b,traces-td1.csv,groq:qwen/qwen3.8-27b:C07,real,sql_rejected,,13970,SQL rejected: Markdown code fences prevent recognition as a SELECT statement.
+C07,dots-studio/dots-3-note-preview:free,traces-td1.csv,openrouter:dots-studio/dots-3-note-preview:free:C07,real,correct,13970,13970,The generated SQL returned the expected value.
+C08,openai/gpt-oss-120b,traces-td1.csv,groq:openai/gpt-oss-120b:C08,real,correct,605580,605580,The generated SQL returned the expected value.
+C08,openai/gpt-oss-20b,traces-td1.csv,groq:openai/gpt-oss-20b:C08,real,incorrect,25920,605580,Incorrect age filter: only two birth dates are selected.
+C08,cohere/north-mini-code:free,traces-td1.csv,openrouter:cohere/north-mini-code:free:C08,real,sql_invalid,,605580,SQL syntax error: invalid AS age expression in the WHERE clause.
+C08,qwen/qwen3.8-27b,traces-td1.csv,groq:qwen/qwen3.8-27b:C08,real,correct,605580,605580,The generated SQL returned the expected value.
+C08,dots-studio/dots-3-note-preview:free,traces-td1.csv,openrouter:dots-studio/dots-3-note-preview:free:C08,real,incorrect,25920,605580,Incorrect age filter: restricts birth dates to one exact day.
+C09,openai/gpt-oss-120b,traces-td1.csv,groq:openai/gpt-oss-120b:C09,real,correct,487980,487980,The generated SQL returned the expected value.
+C09,openai/gpt-oss-20b,traces-td1.csv,groq:openai/gpt-oss-20b:C09,real,correct,487980,487980,The generated SQL returned the expected value.
+C09,cohere/north-mini-code:free,traces-td1.csv,openrouter:cohere/north-mini-code:free:C09,real,incorrect,0,487980,Incorrect logical conditions on birth dates produce the wrong age selection.
+C09,qwen/qwen3.8-27b,traces-td1.csv,groq:qwen/qwen3.8-27b:C09,real,correct,487980,487980,The generated SQL returned the expected value.
+C09,dots-studio/dots-3-note-preview:free,traces-td1.csv,openrouter:dots-studio/dots-3-note-preview:free:C09,real,correct,487980,487980,The generated SQL returned the expected value.
+C10,openai/gpt-oss-120b,traces-td1.csv,groq:openai/gpt-oss-120b:C10,real,correct,558980,558980,The generated SQL returned the expected value.
+C10,openai/gpt-oss-20b,traces-td1.csv,groq:openai/gpt-oss-20b:C10,real,correct,558980,558980,The generated SQL returned the expected value.
+C10,cohere/north-mini-code:free,traces-td1.csv,openrouter:cohere/north-mini-code:free:C10,real,sql_invalid,,558980,SQL syntax error: malformed CAST expressions and parentheses.
+C10,qwen/qwen3.8-27b,traces-td1.csv,groq:qwen/qwen3.8-27b:C10,real,correct,558980,558980,The generated SQL returned the expected value.
+C10,dots-studio/dots-3-note-preview:free,traces-td1.csv,openrouter:dots-studio/dots-3-note-preview:free:C10,real,correct,558980,558980,The generated SQL returned the expected value.
+C11,openai/gpt-oss-120b,traces-td1.csv,groq:openai/gpt-oss-120b:C11,real,correct,446690,446690,The generated SQL returned the expected value.
+C11,openai/gpt-oss-20b,traces-td1.csv,groq:openai/gpt-oss-20b:C11,real,incorrect,322160,446690,Incorrect birth-date boundaries for the requested age range.
+C11,cohere/north-mini-code:free,traces-td1.csv,openrouter:cohere/north-mini-code:free:C11,real,incorrect,0,446690,Incorrect age filtering logic using incompatible date comparisons.
+C11,qwen/qwen3.8-27b,traces-td1.csv,groq:qwen/qwen3.8-27b:C11,real,correct,446690,446690,The generated SQL returned the expected value.
+C11,dots-studio/dots-3-note-preview:free,traces-td1.csv,openrouter:dots-studio/dots-3-note-preview:free:C11,real,correct,446690,446690,The generated SQL returned the expected value.
+C12,openai/gpt-oss-120b,traces-td1.csv,groq:openai/gpt-oss-120b:C12,real,correct,1666490,1666490,The generated SQL returned the expected value.
+C12,openai/gpt-oss-20b,traces-td1.csv,groq:openai/gpt-oss-20b:C12,real,correct,1666490,1666490,The generated SQL returned the expected value.
+C12,cohere/north-mini-code:free,traces-td1.csv,openrouter:cohere/north-mini-code:free:C12,real,correct,1666490,1666490,The generated SQL returned the expected value.
+C12,qwen/qwen3.8-27b,traces-td1.csv,groq:qwen/qwen3.8-27b:C12,real,correct,1666490,1666490,The generated SQL returned the expected value.
+C12,dots-studio/dots-3-note-preview:free,traces-td1.csv,openrouter:dots-studio/dots-3-note-preview:free:C12,real,correct,1666490,1666490,The generated SQL returned the expected value.
+C13,openai/gpt-oss-120b,traces-td1.csv,groq:openai/gpt-oss-120b:C13,real,correct,107740,107740,The generated SQL returned the expected value.
+C13,openai/gpt-oss-20b,traces-td1.csv,groq:openai/gpt-oss-20b:C13,real,correct,107740,107740,The generated SQL returned the expected value.
+C13,cohere/north-mini-code:free,traces-td1.csv,openrouter:cohere/north-mini-code:free:C13,real,correct,107740,107740,The generated SQL returned the expected value.
+C13,qwen/qwen3.8-27b,traces-td1.csv,groq:qwen/qwen3.8-27b:C13,real,correct,107740,107740,The generated SQL returned the expected value.
+C13,dots-studio/dots-3-note-preview:free,traces-td1.csv,openrouter:dots-studio/dots-3-note-preview:free:C13,real,correct,107740,107740,The generated SQL returned the expected value.
+C14,openai/gpt-oss-120b,traces-td1.csv,groq:openai/gpt-oss-120b:C14,real,correct,0,0,The generated SQL returned the expected value.
+C14,openai/gpt-oss-20b,traces-td1.csv,groq:openai/gpt-oss-20b:C14,real,correct,0,0,The generated SQL returned the expected value.
+C14,cohere/north-mini-code:free,traces-td1.csv,openrouter:cohere/north-mini-code:free:C14,real,correct,0,0,The generated SQL returned the expected value.
+C14,qwen/qwen3.8-27b,traces-td1.csv,groq:qwen/qwen3.8-27b:C14,real,correct,0,0,The generated SQL returned the expected value.
+C14,dots-studio/dots-3-note-preview:free,traces-td1.csv,openrouter:dots-studio/dots-3-note-preview:free:C14,real,correct,0,0,The generated SQL returned the expected value.
+C15,openai/gpt-oss-120b,traces-td1.csv,groq:openai/gpt-oss-120b:C15,real,correct,168680,168680,The generated SQL returned the expected value.
+C15,openai/gpt-oss-20b,traces-td1.csv,groq:openai/gpt-oss-20b:C15,real,correct,168680,168680,The generated SQL returned the expected value.
+C15,cohere/north-mini-code:free,traces-td1.csv,openrouter:cohere/north-mini-code:free:C15,real,incorrect,314020,168680,Incorrect age filter: the birth-date interval includes customers younger than 25 and does not correctly select customers aged exactly 25.
+C15,qwen/qwen3.8-27b,traces-td1.csv,groq:qwen/qwen3.8-27b:C15,real,incorrect,0,168680,Age calculation compares month and day without properly checking birth year.
+C15,dots-studio/dots-3-note-preview:free,traces-td1.csv,openrouter:dots-studio/dots-3-note-preview:free:C15,real,incorrect,138920,168680,Incorrect age filter: excludes customers born after September 25, 2000 whose 26th birthday has not yet occurred.
+C16,openai/gpt-oss-120b,traces-td1.csv,groq:openai/gpt-oss-120b:C16,real,correct,376740,376740,The generated SQL returned the expected value.
+C16,openai/gpt-oss-20b,traces-td1.csv,groq:openai/gpt-oss-20b:C16,real,correct,376740,376740,The generated SQL returned the expected value.
+C16,cohere/north-mini-code:free,traces-td1.csv,openrouter:cohere/north-mini-code:free:C16,real,correct,376740,376740,The generated SQL returned the expected value.
+C16,qwen/qwen3.8-27b,traces-td1.csv,groq:qwen/qwen3.8-27b:C16,real,incorrect,367050,376740,Incorrect age boundaries in the birth-year and birthday conditions.
+C16,dots-studio/dots-3-note-preview:free,traces-td1.csv,openrouter:dots-studio/dots-3-note-preview:free:C16,real,incorrect,218760,376740,Incorrect birth-date interval for customers aged exactly 25.
+C17,openai/gpt-oss-120b,traces-td1.csv,groq:openai/gpt-oss-120b:C17,real,incorrect,80190,258180,Age filter selects one exact birth date instead of the full age interval.
+C17,openai/gpt-oss-20b,traces-td1.csv,groq:openai/gpt-oss-20b:C17,real,correct,258180,258180,The generated SQL returned the expected value.
+C17,cohere/north-mini-code:free,traces-td1.csv,openrouter:cohere/north-mini-code:free:C17,real,incorrect,197080,258180,Incorrect age calculation compares month-year components inconsistently.
+C17,qwen/qwen3.8-27b,traces-td1.csv,groq:qwen/qwen3.8-27b:C17,real,incorrect,248490,258180,Incorrect age boundaries in the birth-year and birthday conditions.
+C17,dots-studio/dots-3-note-preview:free,traces-td1.csv,openrouter:dots-studio/dots-3-note-preview:free:C17,real,incorrect,152730,258180,Age calculation approximates years as 365 days and months as 30 days.
+C18,openai/gpt-oss-120b,traces-td1.csv,groq:openai/gpt-oss-120b:C18,real,correct,62480,62480,The generated SQL returned the expected value.
+C18,openai/gpt-oss-20b,traces-td1.csv,groq:openai/gpt-oss-20b:C18,real,correct,62480,62480,The generated SQL returned the expected value.
+C18,cohere/north-mini-code:free,traces-td1.csv,openrouter:cohere/north-mini-code:free:C18,real,incorrect,157610,62480,"Incorrect age calculation at order date, including malformed day extraction."
+C18,qwen/qwen3.8-27b,traces-td1.csv,groq:qwen/qwen3.8-27b:C18,real,correct,62480,62480,The generated SQL returned the expected value.
+C18,dots-studio/dots-3-note-preview:free,traces-td1.csv,openrouter:dots-studio/dots-3-note-preview:free:C18,real,incorrect,39580,62480,Age filter does not correctly exclude customers older than 25.
+C19,openai/gpt-oss-120b,traces-td1.csv,groq:openai/gpt-oss-120b:C19,real,correct,1990,1990,The generated SQL returned the expected value.
+C19,openai/gpt-oss-20b,traces-td1.csv,groq:openai/gpt-oss-20b:C19,real,correct,1990,1990,The generated SQL returned the expected value.
+C19,cohere/north-mini-code:free,traces-td1.csv,openrouter:cohere/north-mini-code:free:C19,real,incorrect,13930,1990,Incorrect birth-date boundaries for the target age.
+C19,qwen/qwen3.8-27b,traces-td1.csv,groq:qwen/qwen3.8-27b:C19,real,incorrect,83580,1990,Incorrect age conditions compare birth-year values with full dates.
+C19,dots-studio/dots-3-note-preview:free,traces-td1.csv,openrouter:dots-studio/dots-3-note-preview:free:C19,real,correct,1990,1990,The generated SQL returned the expected value.
+C20,openai/gpt-oss-120b,traces-td1.csv,groq:openai/gpt-oss-120b:C20,real,correct,1106090,1106090,The generated SQL returned the expected value.
+C20,openai/gpt-oss-20b,traces-td1.csv,groq:openai/gpt-oss-20b:C20,real,correct,1106090,1106090,The generated SQL returned the expected value.
+C20,cohere/north-mini-code:free,traces-td1.csv,openrouter:cohere/north-mini-code:free:C20,real,correct,1106090,1106090,The generated SQL returned the expected value.
+C20,qwen/qwen3.8-27b,traces-td1.csv,groq:qwen/qwen3.8-27b:C20,real,correct,1106090,1106090,The generated SQL returned the expected value.
+C20,dots-studio/dots-3-note-preview:free,traces-td1.csv,openrouter:dots-studio/dots-3-note-preview:free:C20,real,correct,1106090,1106090,The generated SQL returned the expected value.
