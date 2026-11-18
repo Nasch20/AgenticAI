@@ -134,8 +134,8 @@ do not guarantee the same performance on other questions.
 
 ### Files
 
-- [Voting method](../skeleton-multi-llm-en.py)
-- [Voting script](../atelier-vote.py)
-- [2-of-3 results](../vote-td2.csv)
-- [3-of-5 results](../vote-td2-5.csv)
-- [TD1 traces](../TD1/traces-td1.csv)
+- [Voting method](skeleton-multi-llm-en.py)
+- [Voting script](atelier-vote.py)
+- [2-of-3 results](vote-td2.csv)
+- [3-of-5 results](vote-td2-5.csv)
+- [TD1 traces](../../TD1/traces-td1.csv)

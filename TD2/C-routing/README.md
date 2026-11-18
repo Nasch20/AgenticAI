@@ -1,6 +1,5 @@
 # TD 2 - Step 3: Routing Rule (Pair C)
 
-**Sub-group:** [TODO: Insert Group Members / DIA]  
 **Source:** `traces-td1.csv` (100 cells, 5 models × 20 questions, batch of 2026-10-21) and `reference-td1.csv`. No new network calls.  
 **Status:** TD 1 rates computed from traces, prices from `portefeuille-modeles-en` (snapshot of 28 September 2026), and simulator run before and after adaptation.
 
