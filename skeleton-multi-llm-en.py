@@ -144,6 +144,38 @@ KEY_ENV = {"groq": "GROQ_API_KEY", "openrouter": "OPENROUTER_API_KEY"}
 USER_AGENT = "esilv-td-skeleton/2 (python-urllib)"
 
 
+#Quorum policy (TD 2), written BEFORE the answers are seen. Versioned: any change
+# gives a new version. Details and justification in README-politique-quorum.md.
+QUORUM_POLICY = {
+    "version": "q1",
+    "panels": {
+        "2-of-3": {"k": 2, "members": ["groq:openai/gpt-oss-120b",
+                                       "openrouter:cohere/north-mini-code:free",
+                                       "groq:qwen/qwen3.8-27b"]},
+        "3-of-5": {
+    "k": 3,
+    "members": [
+        "groq:openai/gpt-oss-120b",
+        "openrouter:cohere/north-mini-code:free",
+        "groq:qwen/qwen3.8-27b",
+        "groq:openai/gpt-oss-20b",
+        "openrouter:dots-studio/dots-3-note-preview:free"
+    ]
+},
+    },
+    "retry": {   # per model, per question: the batch rules above, same for every model
+        "pause_between_requests_s": PAUSE_BETWEEN_REQUESTS_S,
+        "timeout_per_request_s": REQUEST_TIMEOUT_S,
+        "max_attempts": 2,
+        "http_429": f"1 retry if Retry-After <= {RETRY_AFTER_MAX_S:.0f} s, otherwise none",
+        "http_5xx_timeout_network": f"1 retry after {TEMPORARY_RETRY_DELAY_S:.0f} s",
+        "http_400_401_402_403_404_422": "never retried (access_error)",
+        "sql_invalid_or_rejected": "never retried: the model did answer, the answer is bad",
+    },
+    "ballot": "last attempt of each model; a failed member stays in n and casts no vote",
+    "on_abstention": "no value delivered; no extra model added after seeing the answers",
+}
+
 # ==========================================================================
 # 3. Data structures
 # ==========================================================================
@@ -624,7 +656,50 @@ class Orchestrateur:
         families, and look in your traces for a case where several models agree
         on a wrong value.
         """
-        raise NotImplementedError("vote_k_sur_n: to implement in TD 2 (see the procedure in the docstring).")
+        n = len(traces_question)
+
+        if not (n // 2 < k <= n):
+            raise ValueError("Invalid majority")
+
+        seen = set()
+        votes = {}
+
+        for trace in traces_question:
+            model = (trace.provider, trace.model_requested)
+
+            if model in seen:
+                raise ValueError("Duplicate model")
+
+            seen.add(model)
+
+            if trace.verdict == "executed" and trace.value is not None:
+                value = trace.value
+
+                if value not in votes:
+                    votes[value] = []
+
+                votes[value].append(model[0] + ":" + model[1])
+
+        max_votes = 0
+
+        for value, models in votes.items():
+            count = len(models)
+            max_votes = max(max_votes, count)
+
+            if count >= k:
+                return {
+                    "consensus": True,
+                    "value": value,
+                    "votes": count,
+                    "models": models
+                }
+
+        return {
+            "consensus": False,
+            "value": None,
+            "votes": max_votes,
+            "models": []
+        }
 
 
 # ==========================================================================

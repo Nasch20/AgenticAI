@@ -21,6 +21,11 @@ PANEL = [
     ("groq", "qwen/qwen3.8-27b"),
 ]
 
+PANEL_5 = PANEL + [
+    ("groq", "openai/gpt-oss-20b"),
+    ("openrouter", "dots-studio/dots-3-note-preview:free"),
+]
+
 
 def load_vote():
     spec = importlib.util.spec_from_file_location("student_skeleton", Path(__file__).with_name("skeleton-multi-llm-en.py"))
@@ -30,9 +35,8 @@ def load_vote():
     return lambda proposals, k: module.Orchestrateur.vote_k_sur_n(None, proposals, k)
 
 
-def proposals_for(rows, case, nature):
+def proposals_for(rows, case, nature, panel=PANEL):
     """Fixed panel: an unavailable member keeps its place but casts no vote.
-
     The last CSV row per panel member is its last attempt. Use one chronological
     export per experiment; reject mixed experiments rather than merging them.
     References and correctness verdicts are not passed to the student's vote.
@@ -40,10 +44,10 @@ def proposals_for(rows, case, nature):
     selected = {}
     for row in rows:
         key = (row["provider"], row["model_requested"])
-        if row["case_id"] == case and row["nature"] == nature and key in PANEL:
+        if row["case_id"] == case and row["nature"] == nature and key in panel:
             selected[key] = row
     proposals = []
-    for provider, model in PANEL:
+    for provider, model in panel:
         row = selected.get((provider, model), {})
         value = row.get("value", "")
         valid = row.get("verdict") in {"correct", "incorrect"} and value not in {None, ""}
@@ -53,8 +57,8 @@ def proposals_for(rows, case, nature):
     return proposals
 
 
-def evaluate(vote, proposals, reference=None):
-    result = vote(proposals, 2)
+def evaluate(vote, proposals, reference=None, k=2):
+    result = vote(proposals, k)
     required = {"consensus", "value", "votes", "models"}
     if not isinstance(result, dict) or not required <= result.keys():
         raise ValueError("Return consensus, value, votes and models as specified in TD2.")
@@ -68,8 +72,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--traces", type=Path)
     parser.add_argument("--case", default="C01")
+    parser.add_argument("--panel", type=int, choices=[3, 5], default=3)
     parser.add_argument("--nature", choices=["real", "replay", "simulation"], default="real")
     args = parser.parse_args()
+    panel = PANEL_5 if args.panel == 5 else PANEL
+    k = 3 if args.panel == 5 else 2
     vote = load_vote()
     try:
         if args.traces:
@@ -81,8 +88,8 @@ def main():
             refs = {int(r["reference"]) for r in relevant if r.get("reference") not in {None, ""}}
             if len(refs) > 1:
                 raise ValueError("Conflicting references: check the experiment before voting.")
-            result = evaluate(vote, proposals_for(rows, args.case, args.nature), next(iter(refs), None))
-            print(json.dumps({"case": args.case, "nature": args.nature, "n": 3, "k": 2, **result}))
+            result = evaluate(vote, proposals_for(rows, args.case, args.nature, panel), next(iter(refs), None), k)
+            print(json.dumps({"case": args.case, "nature": args.nature, "n": len(panel), "k": k, **result}))
         else:
             # Synthetic values in cents. These are not results on the shop data.
             for name, values, reference in [
