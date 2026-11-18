@@ -1,4 +1,4 @@
-## Step 1 - The k-of-n vote
+## Part A - The k-of-n vote
 
 ### Implementation
 
